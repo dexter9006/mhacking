@@ -159,7 +159,8 @@
 		}
 		generateSolutions(solutionsize);
 		gameStarted = true;
-		endTime = (new Date()).getTime()+timeout*1000;
+		// Vitto - durée du minigame electronic
+		endTime = (new Date()).getTime()+timeout*1000*2;
 		thread = setInterval(function(){
 			seedTable();
 		},5);
@@ -183,12 +184,12 @@
 			if (gameStarted) {
 				event = event || window.event;
 				var charCode = event.keyCode || event.which;
-				if (charCode == 87 && !solved[0]) { // w
+				if (charCode == 90 && !solved[0]) { // z
 					if ( userSolPos[0][0] > 0 ) {
 						userSolPos[0][0]--;
 					}
 				}
-				else if (charCode == 65 && !solved[0]) { //a
+				else if (charCode == 81 && !solved[0]) { //q
 					if ( userSolPos[0][1] > 1 ) {
 						userSolPos[0][1]--;
 					}
